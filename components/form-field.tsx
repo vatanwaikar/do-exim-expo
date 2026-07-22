@@ -21,7 +21,7 @@ export function FormField({
       </label>
       <input
         {...props}
-        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all ${
+        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all ${
           error ? 'border-destructive focus:ring-destructive' : ''
         } ${className}`}
       />
@@ -54,7 +54,7 @@ export function SelectField({
       </label>
       <select
         {...props}
-        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all ${
+        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all ${
           error ? 'border-destructive focus:ring-destructive' : ''
         } ${className}`}
       >
@@ -88,7 +88,7 @@ export function CheckboxField({
         <input
           type="checkbox"
           {...props}
-          className={`w-4 h-4 rounded border-border text-secondary focus:ring-2 focus:ring-secondary cursor-pointer ${className}`}
+          className={`w-4 h-4 rounded border-border text-accent focus:ring-2 focus:ring-accent cursor-pointer ${className}`}
         />
         <span className="text-sm font-medium text-foreground">{label}</span>
       </label>
@@ -118,7 +118,7 @@ export function TextAreaField({
       </label>
       <textarea
         {...(props as any)}
-        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all resize-none ${
+        className={`w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none ${
           error ? 'border-destructive focus:ring-destructive' : ''
         } ${className}`}
       />
