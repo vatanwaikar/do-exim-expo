@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Header } from '@/components/header'
 import { FormField, SelectField, CheckboxField, TextAreaField } from '@/components/form-field'
 import { sponsorFormSchema, type SponsorFormData } from '@/lib/schemas'
 import { AlertCircle, CheckCircle } from 'lucide-react'
@@ -63,18 +62,17 @@ export default function SponsorRegistration() {
   }
 
   return (
-    <>
-      <Header />
-      <main className="bg-background min-h-screen py-12 sm:py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">Sponsorship Application</h1>
-            <p className="text-muted-foreground">
-              Increase your brand visibility at DoExim Expo with premium sponsorship packages
-            </p>
-          </div>
+    <main className="bg-background min-h-screen pt-28 pb-16 sm:pt-32">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">Partnership</span>
+          <h1 className="font-serif text-3xl sm:text-4xl font-medium text-foreground mb-3 tracking-tight">Sponsorship Application</h1>
+          <p className="text-muted-foreground leading-relaxed">
+            Increase your brand visibility at DoExim Expo with premium sponsorship packages
+          </p>
+        </div>
 
-          <div className="bg-card rounded-xl border border-border p-8">
+        <div className="bg-card rounded-lg border border-border p-8 shadow-sm">
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex gap-3">
                 <CheckCircle className="text-green-600 flex-shrink-0" size={20} />
@@ -211,7 +209,7 @@ export default function SponsorRegistration() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-secondary text-secondary-foreground font-bold rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity"
+                  className="w-full px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-sm hover:bg-accent/90 disabled:opacity-50 transition-colors"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </button>
@@ -219,7 +217,6 @@ export default function SponsorRegistration() {
             </form>
           </div>
         </div>
-      </main>
-    </>
+    </main>
   )
 }

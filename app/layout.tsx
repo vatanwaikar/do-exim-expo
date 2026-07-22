@@ -1,8 +1,21 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Inter, Fraunces } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'DoExim Expo - International Trade Show',
@@ -41,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className="antialiased bg-background text-foreground flex flex-col min-h-screen">
+    <html lang="en" className={`bg-background ${inter.variable} ${fraunces.variable}`}>
+      <body className="antialiased font-sans bg-background text-foreground flex flex-col min-h-screen">
         <Header />
         <div className="flex-1">
           {children}
