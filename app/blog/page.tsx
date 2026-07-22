@@ -41,7 +41,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <main className="pt-32 pb-20 px-4 md:px-8">
+    <main className="pt-32 pb-20 px-4 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <motion.div
@@ -49,8 +49,11 @@ export default function Blog() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center space-y-4"
         >
-          <h1 className="text-5xl md:text-6xl font-light">Insights & Updates</h1>
-          <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Journal
+          </span>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium text-foreground tracking-tight">Insights &amp; Updates</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Latest news and insights from the global trade community
           </p>
         </motion.div>
@@ -64,29 +67,29 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group p-6 bg-card border border-border rounded-sm hover:border-accent/50 transition-colors cursor-pointer"
+              className="group p-6 bg-card border border-border rounded-lg hover:border-accent/60 hover:shadow-md transition-all cursor-pointer"
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-sm">
+                  <span className="px-3 py-1 bg-accent/15 text-accent text-xs font-semibold rounded-full">
                     {post.category}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-medium group-hover:text-accent transition-colors line-clamp-2">
+                <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
-                <p className="text-foreground/60 text-sm line-clamp-2">
+                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
                   {post.excerpt}
                 </p>
 
-                <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                  <div className="flex items-center gap-2 text-xs text-foreground/50">
+                <div className="flex items-center gap-4 pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <User className="w-3 h-3" />
                     {post.author}
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-foreground/50">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <Calendar className="w-3 h-3" />
                     {post.date}
                   </div>
