@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark bg-background ${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`bg-background ${inter.variable} ${fraunces.variable}`}>
       <body className="antialiased font-sans bg-background text-foreground flex flex-col min-h-screen">
         <Header />
         <div className="flex-1">
