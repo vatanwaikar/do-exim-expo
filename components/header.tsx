@@ -102,11 +102,6 @@ export function Header() {
             </AnimatePresence>
           </div>
 
-          <Link href="/admin">
-            <button className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors">
-              Admin
-            </button>
-          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -154,16 +149,6 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-              </div>
-
-              <div className="pt-2 mt-2 border-t border-border/60">
-                <Link
-                  href="/admin"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-sm text-center hover:bg-primary/90 transition-colors"
-                >
-                  Admin Panel
-                </Link>
               </div>
             </div>
           </motion.div>

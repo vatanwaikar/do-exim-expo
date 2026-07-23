@@ -8,7 +8,7 @@ export const exhibitorFormSchema = z.object({
   country: z.string().min(2, 'Country is required'),
   industry: z.string().min(2, 'Industry is required'),
   boothSize: z.enum(['small', 'medium', 'large'], {
-    errorMap: () => ({ message: 'Please select a booth size' })
+    message: 'Please select a booth size'
   }),
   productCategories: z.array(z.string()).min(1, 'Select at least one product category'),
   message: z.string().optional(),
@@ -24,14 +24,14 @@ export const visitorFormSchema = z.object({
   country: z.string().min(2, 'Country is required'),
   industryInterests: z.array(z.string()).min(1, 'Select at least one industry interest'),
   visitingReason: z.enum(['sourcing', 'networking', 'business', 'learning'], {
-    errorMap: () => ({ message: 'Please select a reason for visiting' })
+    message: 'Please select a reason for visiting'
   }),
 })
 
 export const sponsorFormSchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
   sponsorshipLevel: z.enum(['gold', 'silver', 'bronze'], {
-    errorMap: () => ({ message: 'Please select sponsorship level' })
+    message: 'Please select sponsorship level'
   }),
   contactPerson: z.string().min(2, 'Contact person name is required'),
   email: z.string().email('Invalid email address'),
@@ -53,7 +53,7 @@ export const workshopFormSchema = z.object({
   country: z.string().min(2, 'Country is required'),
   workshopChoices: z.array(z.string()).min(1, 'Select at least one workshop'),
   experience: z.enum(['beginner', 'intermediate', 'advanced'], {
-    errorMap: () => ({ message: 'Please select experience level' })
+    message: 'Please select experience level'
   }),
   specialRequests: z.string().optional(),
 })
